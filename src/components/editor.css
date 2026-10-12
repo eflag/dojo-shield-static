@@ -1,0 +1,133 @@
+.code-editor {
+  --editor-source: #187958;
+  --editor-flow: #896215;
+  --editor-sink: #bc514c;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--surface, #fff);
+  color: var(--text, #26322f);
+}
+
+.code-editor .cm-editor {
+  height: 100%;
+  font-size: var(--code-font-size, 13px);
+  background: var(--surface, #fff);
+}
+
+.code-editor .cm-editor.cm-focused {
+  outline: none;
+}
+
+.code-editor .cm-scroller {
+  overflow: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  line-height: 1.85;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line, #dce1dd) transparent;
+}
+
+.code-editor .cm-content {
+  min-height: 100%;
+  padding: 20px 0 80px;
+  caret-color: var(--accent, #26745c);
+}
+
+.code-editor .cm-line {
+  padding: 0 24px 0 16px;
+}
+
+.code-editor .cm-gutters {
+  padding-right: 8px;
+  border: 0;
+  border-right: 0.5px solid var(--line, #e5e8e5);
+  background: var(--surface, #fff);
+  color: var(--muted, #8a938d);
+  user-select: none;
+}
+
+.code-editor .cm-lineNumbers .cm-gutterElement {
+  min-width: 43px;
+  padding: 0 8px 0 12px;
+  font-variant-numeric: tabular-nums;
+  border-left: 3px solid transparent;
+}
+
+.code-editor--review .cm-lineNumbers .cm-gutterElement {
+  cursor: pointer;
+}
+
+.code-editor--review .cm-lineNumbers .cm-gutterElement:hover {
+  color: var(--accent, #26745c);
+  background: color-mix(in srgb, var(--accent, #26745c) 7%, transparent);
+}
+
+.code-editor .cm-activeLine,
+.code-editor .cm-activeLineGutter {
+  background: color-mix(in srgb, var(--accent, #26745c) 4%, transparent);
+}
+
+.code-editor .cm-activeLineGutter {
+  color: var(--text, #26322f);
+}
+
+.code-editor .cm-cursor,
+.code-editor .cm-dropCursor {
+  border-left-color: var(--accent, #26745c);
+}
+
+.code-editor .cm-selectionBackground,
+.code-editor .cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {
+  background: color-mix(in srgb, var(--accent, #26745c) 17%, transparent);
+}
+
+.code-editor .cm-matchingBracket {
+  background: color-mix(in srgb, var(--accent, #26745c) 13%, transparent);
+  outline: 0.5px solid color-mix(in srgb, var(--accent, #26745c) 35%, transparent);
+}
+
+.code-editor .cm-review-current {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent, #26745c) 24%, transparent);
+}
+
+.code-editor .cm-review-source {
+  background: color-mix(in srgb, var(--editor-source) 8%, var(--surface, #fff));
+}
+
+.code-editor .cm-review-flow {
+  background: color-mix(in srgb, var(--editor-flow) 8%, var(--surface, #fff));
+}
+
+.code-editor .cm-review-sink {
+  background: color-mix(in srgb, var(--editor-sink) 8%, var(--surface, #fff));
+}
+
+.code-editor .cm-lineNumbers .cm-review-gutter-source {
+  color: var(--editor-source);
+  border-left-color: var(--editor-source);
+  background: color-mix(in srgb, var(--editor-source) 8%, var(--surface, #fff));
+}
+
+.code-editor .cm-lineNumbers .cm-review-gutter-flow {
+  color: var(--editor-flow);
+  border-left-color: var(--editor-flow);
+  background: color-mix(in srgb, var(--editor-flow) 8%, var(--surface, #fff));
+}
+
+.code-editor .cm-lineNumbers .cm-review-gutter-sink {
+  color: var(--editor-sink);
+  border-left-color: var(--editor-sink);
+  background: color-mix(in srgb, var(--editor-sink) 8%, var(--surface, #fff));
+}
+
+@media (max-width: 700px) {
+  .code-editor .cm-editor {
+    font-size: 12px;
+  }
+
+  .code-editor .cm-line {
+    padding-right: 16px;
+    padding-left: 12px;
+  }
+}
